@@ -1,0 +1,17 @@
+---
+- name: Add ubuntu keyserver for php5.5
+  apt_key: data="{{ lookup('file', 'php5.key.gpg') }}" state=present
+
+- name: Adds php 5.5 repo
+  apt_repository: repo='ppa:ondrej/php5'
+
+- name: Install php 5.5 and dependencies
+  apt: pkg={{item}} update_cache=yes state=latest
+  with_items:
+      - php5-cli
+      - php5-common
+      - php5-curl
+      - php5-gd
+      - php5-mcrypt
+      - php5-mysql
+      - libapache2-mod-php5

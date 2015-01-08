@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    document_root: /vagrant
+    phpuser: 'www-data'
+    phpgroup: 'www-data'
+  handlers:
+    - name: reload apache
+      service: name=apache2 state=reloaded
+  tasks:
+    - name: update apt cache
+      apt: update_cache=yes
+    - name: remove nano
+      apt: name=nano state=absent
+    - name: install vim
+      apt: name=vim state=present
+  roles:
+    - webserver
+    - database
