@@ -6,6 +6,13 @@ The Machine box based on ubuntu/precise64 http://files.vagrantup.com/precise64.b
 ### The packages are
 1. Apache2
 2. PHP 5.5
+ - php5-cli
+ - php5-common
+ - php5-curl
+ - php5-gd
+ - php5-mcrypt
+ - php5-mysql
+ - libapache2-mod-php5
 3. MySQL
 4. Vim
 
