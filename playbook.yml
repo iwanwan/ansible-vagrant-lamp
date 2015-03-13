@@ -2,7 +2,7 @@
 - hosts: all
   sudo: true
   vars:
-    document_root: /vagrant
+    document_root: /vagrant/htdocs
     phpuser: 'www-data'
     phpgroup: 'www-data'
   handlers:
